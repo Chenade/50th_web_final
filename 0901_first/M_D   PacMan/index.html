@@ -1,0 +1,153 @@
+<!Doctype HTML5>
+<html>
+
+<head><style>
+	body{
+		color:white;
+	}
+	.main{
+		width:768px;
+		height:1024px;
+		background-color: black;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.icon{
+		width:40px;
+		height:40px;
+		margin:5px;
+	}
+	button{
+		background-color: transparent;
+		border:solid white 1px;
+		font-size: xx-large;
+		color: white;
+		margin-left: 20px;
+	}
+	.font{
+		background-color: transparent;
+		border:solid white 1px;
+		font-size: large;
+		color: white;
+	}
+	.select{
+		background-color: white;
+		color: black;
+	}
+	#map{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.row{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+	#end_play{
+		position: absolute; display:none; width:500px; height: 500px; background-color: black; border:solid white 1px; padding: 5px;
+
+	}
+
+</style></head>
+
+<body>
+<div align="center">
+	<div id="stop_play"  style="padding: 0;display: inline;">
+	<div class="main" id="main_index">
+
+		<div><P style="font-size:72px;">PACMAN</P></div>
+		<div style="display: flex;	align-items: center;">
+			<img src="./source/Asset 1.png" class="icon"/>
+			<img src="./source/Asset 3.png" class="icon"/>
+			<img src="./source/Asset 5.png" class="icon"/>
+			<img src="./source/blank.png" class="icon"/>
+			<img src="./source/blank.png" class="icon"/>
+			<img src="./source/Asset 7.png" class="icon"/>
+			<img src="./source/ball.png" class="icon"/>
+		</div>
+		<div>
+			<input type="text" name="name" id="name" placeholder="Player's Name"  style="height:40px; width:400px; font-size:xx-large;">
+		</div>
+		<div>
+			<button id="easy">EASY</button>
+			<button id="normal" class="select">NORMAL</button>
+			<button id="hard">HARD</button>
+		</div>
+
+		<div>
+			<button id="tutorial">TUTORIAL</button>
+			<button id="start_game">START GAME</button>
+		</div>
+
+		<div align="right" style="width:100%; padding-right:50px;">
+			<button id="font_up" class="font">FONT+</button>
+			<button id="font_down" class="font">FONT-</button>
+		</div>
+	</div>
+	</div>
+
+	<br>
+
+	<div  id="start_play"  style="padding: 0;display: none;">
+	<div class="main" id="main_play" style="justify-content: space-between; overflow: hidden; ">
+
+		<div id="logo"><p style="font-size:72px; line-height: 70px; padding: 0; margin: 0;">PACMAN</p></div>
+
+		<div style="width:768px;display: flex; flex-direction: row; justify-content: space-between;flex-wrap: wrap;">
+
+			<div style="padding-left:50px; display: flex; flex-direction: row; ">
+				<H2>SCORE：</H2>
+				<H2 id="score_play"></H2>
+			</div>
+			<div style=" padding-right:50px; display: flex; flex-direction: row;">
+				<H2>LIFE：</H2>
+				<div id="life_play" style="display: flex; flex-direction: row; align-items: center;"></div>
+			</div>
+			<div style=" display: flex; flex-direction: row;">
+				<H2>TIME：</H2>
+				<H2 id="time_play">00:00</H2>
+			</div>
+			<div style=" display: flex; flex-direction: row;">
+				<img id="play_pause" src="./source/pause.png" width="60px" height="60px"/>
+			</div>
+		</div>
+
+		<div id="map">
+
+		</div>
+		<div style="width:768px;display: flex; flex-direction: row; justify-content: space-between;">
+
+			<div style="width:33%; padding-right:50px;">
+				<h1 id="player_info">BOB</h1>
+			</div>
+			<div style="width:33%; padding-right:50px;">
+				<h1 id="stage_info">NORMAL</h1>
+			</div>
+			<div align="right" style="width:33%; padding-right:50px;">
+				<button id="font_up" class="font">FONT+</button>
+				<button id="font_down" class="font">FONT-</button>
+			</div>
+
+			<div id="end_play">
+				<h1>RankinG</h1>
+				<hr>
+				<button id="restart" style="width:90%">RESTART</button>
+			</div>
+		</div>
+
+	</div>
+	</div>
+
+
+</div>
+</body>
+</html>
+
+<script src="./jQuery-v3.5.1.js"></script>
+<script src="./index.js"></script>

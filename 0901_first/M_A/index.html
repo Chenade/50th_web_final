@@ -1,0 +1,70 @@
+<!Doctype HTML5>
+<html>
+
+<head><style>
+
+	.selected{
+		background-color: blue;
+		color: white;
+	}
+
+</style></head>
+
+<body>
+	
+
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+	<div style="width: 48vw">
+		<div>
+			<p> <input type="text" id="keyword"> <button id="searchbtn">SEARCH</button></p>
+			<p> <input type="checkbox" id="advance"> 進階搜尋</p>
+		</div>
+		<hr>
+		<div id="album">
+
+		</div>
+	</div>
+	<div style="width: 48vw">
+		<div>
+			<audio id="audio" src="https://storage.googleapis.com/media-session/sintel/snow-fight.mp3">
+			</audio>
+		</div>
+		<div align="center">
+			<H1>播放器</H1>
+		</div>
+
+		<div align="center" style="border:solid black 1px;">
+			<p id="title">title</p>
+			<p id="player">player</p>
+			<p id="name">name</p>
+		</div>
+		<div align="center">
+			<input type="range" id="timeline" style="width: 100%;" value="0" step="1" min="0">
+			<p>
+				<span id="current_time">mm:ss</span> /
+				<span id="total_time">mm:ss</span>
+			</p>
+		</div>
+		<div  align="center">
+			<button id="previous">previous</button>
+			<button id="play_pause">play</button>
+			<button id="next">next</button>
+			<button id="mute">mute</button>
+			<input type="range" id="vol" min="0" max="1" step="0.01">
+		</div>
+		<br><hr>
+		<div align="center" id="plyr_list"></div>
+	</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script src="./jQuery-v3.5.1.js"></script>
+<script src="./index.js"></script>

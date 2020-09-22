@@ -1,0 +1,50 @@
+<!doctype HTML5>
+
+<html>
+
+
+<head>
+    <style>
+      
+    </style>
+</head>
+
+<body>
+
+<form action="E07.php" method="POST">
+    <canvas id="canvas" width="300px" height="150px" style="border:solid black 1px">
+</form>
+
+</div>
+</body>
+
+</html>
+
+<script>
+var _canvas = document.getElementById('canvas');
+var ctx = _canvas.getContext('2d');  
+
+var isDrawing = false;
+var lastX =0, lastY=0;
+
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false);
+canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true; // 允許繪製
+    [lastX, lastY] = [e.offsetX, e.offsetY]; // 設定起始點
+});
+
+canvas.addEventListener('mousemove', draw);
+
+function draw(e) {
+	if (isDrawing){
+		ctx.beginPath();  // 開始路徑 or Reset
+		ctx.moveTo(lastX, lastY);  // 設定起點
+		ctx.lineTo(e.offsetX, e.offsetY);  // 設定終點
+		ctx.stroke();  // 依照設定開始繪製
+		[lastX, lastY] = [e.offsetX, e.offsetY];  // 位置更新
+	}
+	
+};
+
+</script>

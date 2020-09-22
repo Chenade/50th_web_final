@@ -1,0 +1,279 @@
+<html>
+
+
+<head>
+	<style>
+		
+		body{
+		display:flex;
+		flex-direction:row;
+		}
+		.horiz{
+			width:100px;
+			height:10px;
+			background-color:red;
+			margin:5px;
+		}
+		.horiz_low{
+			width:100px;
+			height:10px;
+			background-color:lightgray;
+			margin:5px;
+		}
+		.vert{
+			width:10px;
+			height:100px;
+			background-color:red;
+			margin:5px;
+		}
+		.vert_low{
+			width:10px;
+			height:100px;
+			background-color:lightgray;
+			margin:5px;
+		}
+		
+	</style>
+</head>
+
+<body>
+
+<div id="H1" style="display:flex; flex-direction:column; margin-left:50px;"></div>
+<div id="H2" style="display:flex; flex-direction:column;margin-left:50px;"></div>
+<div id="prep"><p style="font-size:120px;">：</p></div>
+<div id="M1"style="display:flex; flex-direction:column;margin-left:50px;">  </div>
+<div id="M2"style="display:flex; flex-direction:column;margin-left:50px;">  </div>
+<div id="prep" class="flash"><p style="font-size:120px; ">：</p></div>
+<div id="S1"style="display:flex; flex-direction:column;margin-left:50px;">  </div>
+<div id="S2"style="display:flex; flex-direction:column;margin-left:50px;">  </div>
+
+</body>
+
+</html>
+
+<script src='./jQuery-v3.5.1.js'></script>
+<script>
+	function numbers(data){
+		switch (data) {
+			case '1':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz_low"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz_low"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz_low"></div>\n' +
+						'\t</div>';
+				break;
+			case '2':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>';
+				break;
+				case '3':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>';
+				break;
+				case '4':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz_low"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz_low"></div>\n' +
+						'\t</div>';
+				break;
+			case '5':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>';
+				break;
+			case '6':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>';
+				break;
+			case '7':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz_low"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz_low"></div>\n' +
+						'\t</div>';
+				break;
+			case '8':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>';
+				break;
+			case '9':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert_low"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>';
+				break;
+			case '0':
+				var html = '<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz_low"></div>\n' +
+						'\t</div>\n' +
+						'\t<div style="display:flex; flex-direction:row; width:110px; justify-content:space-between;">\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t\t<div class="vert"></div>\n' +
+						'\t</div>\n' +
+						'\t<div>\n' +
+						'\t\t<div class="horiz"></div>\n' +
+						'\t</div>';
+				break;
+		}
+		return html;
+	}
+	function lpad(str){
+		return ((str < 10) ? '0'+str : str);
+	}
+
+	var update = setInterval(function(){
+		var date = new Date(),
+				HH = date.getHours(),
+				mm = date.getMinutes(),
+				ss = date.getSeconds();
+		var dateformat = lpad(HH) + ":" +  lpad(mm) + ":" + lpad(ss),
+				df = dateformat.split(":"), x=[];
+
+		for(var i in df){
+			var tmp = df[i].split("");
+			x.push(tmp[0]);
+			x.push(tmp[1]);
+		}
+
+
+		$("#H1").html(numbers(x[0]));
+		$("#H2").html(numbers(x[1]));
+		$("#M1").html(numbers(x[2]));
+		$("#M2").html(numbers(x[3]));
+		$("#S1").html(numbers(x[4]));
+		$("#S2").html(numbers(x[5]));
+	},100);
+
+
+</script>

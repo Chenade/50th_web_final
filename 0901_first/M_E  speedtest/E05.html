@@ -1,0 +1,77 @@
+<html>
+
+
+<head>
+	<style>
+		body{
+			display: flex;
+			flex-direction: row;
+		}
+		#main {
+			background-image: linear-gradient(to right, red , yellow);
+		}
+
+	</style>
+</head>
+
+<body>
+<div style="width:10vw; height:100vh;display: flex; flex-direction: column;">
+	<button class="left" style="width:60px; height:60px; border-radius:15px; background-color:red; margin:10px;" value="red"></button>
+	<button class="left" style="width:60px; height:60px; border-radius:15px; background-color:lightgreen; margin:10px;" value="lightgreen"></button>
+	<button class="left" style="width:60px; height:60px; border-radius:15px; background-color:blue; margin:10px;" value="blue"></button>
+	<button class="left" style="width:60px; height:60px; border-radius:15px; background-color:brown; margin:10px;" value="brown"></button>
+	<button class="left" style="width:60px; height:60px; border-radius:15px; background-color:darkgreen; margin:10px;" value="darkgreen"></button>
+</div>
+<div style="width:20vw; height:100vh;">
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<input type="text" id="left_input">
+</div>
+<div align="center" style="width:35vw; height:100vh;">
+	<div id="main" style="width:300px; height:300px; border-radius:15px; background-color:black;"></div>
+</div>
+<div style="width:20vw; height:100vh;">
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<input type="text" id="right_input">
+</div>
+<div style="width:80px; height:100vh;">
+	<button class="right" style="width:60px; height:60px; border-radius:15px; background-color:yellow; margin:10px;"  value="yellow"></button>
+	<button class="right" style="width:60px; height:60px; border-radius:15px; background-color:lightblue; margin:10px;"  value="lightblue"></button>
+	<button class="right" style="width:60px; height:60px; border-radius:15px; background-color:pink; margin:10px;"  value="pink"></button>
+	<button class="right" style="width:60px; height:60px; border-radius:15px; background-color:navy; margin:10px;"  value="navy"></button>
+	<button class="right" style="width:60px; height:60px; border-radius:15px; background-color:lightgray; margin:10px;"  value="lightgray"></button>
+</div>
+
+</body>
+
+</html>
+
+<script src="./jQuery-v3.5.1.js"></script>
+<script>
+
+	var left = 'red',
+		right = 'yellow';
+
+	$( "#left_input" ).keyup(function() {
+		if($(this).val().length > 5){
+			left = $(this).val();
+			$("#main").css('background-image', 'linear-gradient(to right, '+ left+' , '+ right +')');
+		}
+	});
+	$( "#right_input" ).keyup(function() {
+		if($(this).val().length > 5){
+			right = $(this).val();
+			$("#main").css('background-image', 'linear-gradient(to right, '+ left+' , '+ right +')');
+		}
+	});
+
+	$( ".left" ).on('click',function() {
+		left = $(this).val();
+		$("#main").css('background-image', 'linear-gradient(to right, '+ left+' , '+ right +')');
+	});
+	$( ".right" ).on('click',function() {
+		right = $(this).val();
+		$("#main").css('background-image', 'linear-gradient(to right, '+ left+' , '+ right +')');
+	});
+
+
+</script>

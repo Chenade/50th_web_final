@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>Read Text File</title> 
+</head> 
+  
+<body> 
+    <input type="file" name="inputfile" id="inputfile">
+    <a id="download" style="display:none;">myfilename.txt</a>
+
+    <script src="./jQuery-v3.5.1.js"></script>
+    <script type="text/javascript">
+        var data={};
+        document.getElementById('inputfile').addEventListener('change', function() {
+
+            data=[];
+              
+            var fr=new FileReader(); 
+            fr.onload = function(){
+				alert('45');
+                var tmp = fr.result.split('\n');
+                for (var i in tmp){
+                    data.push(tmp[i]);
+                }
+                var deduped = Array.from( new Set(data) );
+                var result = '';
+                for (var i in deduped){
+                    result += deduped[i];
+                    result += '\n';
+                }
+
+                $("#download").attr('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(result));
+                $("#download").attr('download', "myfilename.txt");
+                $("#download").css('display', 'inline');
+
+            }
+              
+            fr.readAsText(this.files[0]);
+        }) 
+    </script> 
+</body> 
+  
+</html> 
