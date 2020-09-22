@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E05</title>
+    <style>
+        button{
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+        }
+        #main{
+            width: 300px;
+            height: 300px;
+            background-image: linear-gradient(to right, red, pink);
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+        <div style="display: flex; flex-direction: column; justify-content: space-around">
+
+            <button class="left" style="background-color: red;" value="red"></button>
+            <button class="left" style="background-color: green;" value="green"></button>
+            <button class="left" style="background-color: blue;" value="blue"></button>
+            <button class="left" style="background-color: brown;" value="brown"></button>
+            <button class="left" style="background-color: darkolivegreen;" value="darkolivegreen"></button>
+
+        </div>
+
+        <div style="display: flex; align-items: center;">
+            <input type="text" id="left_input">
+        </div>
+
+        <div style="display: flex; align-items: center;">
+            <div id="main"></div>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+            <input type="text" id="right_input">
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: space-around">
+
+            <button class="right" style="background-color: yellow;" value="yellow"></button>
+            <button class="right" style="background-color: lightseagreen;" value="lightseagreen"></button>
+            <button class="right" style="background-color: pink;" value="pink"></button>
+            <button class="right" style="background-color: orangered;" value="orangered"></button>
+            <button class="right" style="background-color: rosybrown;" value="rosybrown"></button>
+
+        </div>
+
+
+    </div>
+</body>
+</html>
+
+<script src="jQuery-v3.5.1.js"></script>
+<script>
+
+    var left = "red";
+    var right = "pink";
+
+
+    $(".left").on('click', function () {
+        left = $(this).val();
+        $("#main").css('background-image','linear-gradient(to right, '+ left +','+ right+')')
+    });
+
+    $(".right").on('click', function () {
+        right = $(this).val();
+        $("#main").css('background-image','linear-gradient(to right, '+ left +','+ right+')')
+    });
+
+    $("#left_input").on('keyup', function () {
+        if($(this).val().length > 5){
+            left = $(this).val();
+            $("#main").css('background-image','linear-gradient(to right, '+ left +','+ right+')')
+        }
+    });
+
+    $("#right_input").on('keyup', function () {
+        if($(this).val().length > 5){
+            right = $(this).val();
+            $("#main").css('background-image','linear-gradient(to right, '+ left +','+ right+')')
+        }
+    });
+</script>

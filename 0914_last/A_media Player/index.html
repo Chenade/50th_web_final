@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+
+</head>
+<body>
+
+    <audio src="./snow-fight.mp3" id="audio" controls></audio>
+
+</body>
+</html>
+
+<script>
+
+    var url_ = new URL(window.location.href);
+    var data = [['title','test'], ['content','test12']];
+    var search = new URLSearchParams(data);
+    url_.search = search;
+    history.pushState('','',url_.href);
+
+    var title = url_.searchParams.get('title');
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+        album: 'album',
+        artist: 'artist',
+        title: 'title',
+        artwork:[
+            {src: 'http://127.0.0.1/second/resources/img/6.png',sizes:'512x512'}
+        ]
+    });
+
+    var audio = document.getElementById('audio');
+
+    navigator.mediaSession.setActionHandler('play',function () {  audio.play();  });
+    navigator.mediaSession.setActionHandler('pause',function () {  audio.pause();  });
+    navigator.mediaSession.setActionHandler('nexttrack',function () {    });
+    navigator.mediaSession.setActionHandler('previoustrack',function () {    });
+
+    var tmp = 'title:"abc def" artist:xyz';
+    var array = tmp.split(" ");
+
+    for(var i in array){
+        if(array[i].includes('"') && !array[i].includes(':')){
+            array[i-1] += array[i];
+            array[i] = '';
+        }
+    }
+
+
+    console.log(array);
+    if(array[1].substring(0,1) == '"')
+        console.log(array[1].substring(1,array[1].length-1));
+    else
+        console.log(tmp);
+
+</script>

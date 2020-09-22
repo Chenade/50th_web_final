@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E10</title>
+</head>
+<body>
+    <div style="border: solid black 1px; width: 300px;">
+        <canvas id="canva" width="300" height="150"></canvas>
+    </div>
+</body>
+</html>
+
+<script src="jQuery-v3.5.1.js"></script>
+<script>
+
+    var canvas = document.getElementById("canva");
+    var ctx = canvas.getContext('2d');
+
+    var isDrawing = false;
+    var last_x = 0;
+    var last_y = 0;
+
+
+    $("#canva").on("mouseup",  function () {
+        isDrawing = false;
+    });
+
+    $("#canva").on("mouseout",  function () {
+        isDrawing = false;
+    });
+
+
+    $("#canva").on("mousedown",  function (e) {
+        isDrawing = true;
+        last_x = e.offsetX;
+        last_y = e.offsetY;
+    });
+
+    $("#canva").on("mousemove",  draw);
+
+
+    function draw(e) {
+        if(isDrawing){
+            ctx.beginPath();
+            ctx.moveTo(last_x, last_y);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            last_x = e.offsetX;
+            last_y = e.offsetY;
+        }
+    }
+</script>

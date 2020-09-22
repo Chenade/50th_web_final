@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pacman</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div style="display: flex; flex-direction: row; justify-content: center;align-items: center; width: 100vw; height: 100vh;">
+    <div align="center" id="index_box">
+        <div class="page" style=" display: flex; flex-direction: column; justify-content: space-around;">
+            <div>
+                <img src="source/logo.png" style="width: 700px;" />
+            </div>
+
+            <div>
+                <img src="source/Asset%201.png" class="icon">
+                <img src="source/Asset%203.png" class="icon">
+                <img src="source/Asset%205.png" class="icon">
+                <img src="source/blank.png" class="icon">
+                <img src="source/Asset%208.png" class="icon">
+                <img src="source/dot.png" class="icon">
+            </div>
+
+            <div>
+                <input type="text" id="plyr_input" placeholder="Player's Name">
+            </div>
+
+            <div>
+                <div>
+                    <button class="index" value="easy">EASY</button>
+                    <button class="index selected" value="normal">NORMAL</button>
+                    <button class="index" value="hard">HARD</button>
+                </div>
+
+                <div>
+                    <button class="index" value="tutorial">TUTORIAL</button>
+                    <button class="index" value="start">START GAME</button>
+                </div>
+
+                <div class="info_box">
+                    <button class="font" value="add">+</button>
+                    <p>Font</p>
+                    <button class="font" value="minus">-</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div align="center" id="play_box" style="display: none">
+
+        <div align="center" class="box" id="tab">
+            <div id="tutorial_box">
+                <div id="content"></div>
+                <hr>
+                <button class="index" id="end_tutorial">END</button>
+            </div>
+            <div id="result_box">
+                <H1>RESULT</H1>
+                <hr>
+                <div id="content2" style="min-height: 150px;"></div>
+                <hr>
+                <button class="index" id="restart">RESTART</button>
+            </div>
+        </div>
+
+        <div class="page" id="play_page">
+            <div>
+                <img src="source/logo.png" style="height: 80px;" />
+            </div>
+
+            <div class="info">
+                <div class="info_box" id="score_box">
+                    <H1>SCORE:&ensp;</H1>
+                    <H1 id="score"></H1>
+                </div>
+
+                <div class="info_box" id="life_box">
+                    <H1>LIFE:&ensp;</H1>
+                    <div id="life"></div>
+                </div>
+
+                <div class="info_box" id="time_box">
+                    <H1>TIME:&ensp;</H1>
+                    <H1 id="time">01:00</H1>
+                </div>
+
+                <div>
+                    <img src="./source/play.png" class="icon" id="play_pause">
+                </div>
+
+            </div>
+
+            <div id="map"></div>
+
+            <div id="touch_panel" style="display: none">
+                <div style="display: flex; flex-direction: row; justify-content: space-around">
+                    <div>
+                        <div class="touch_row">
+                            <button class="touch" value="w">W</button>
+                        </div>
+                        <div class="touch_row">
+                            <button class="touch" value="a">A</button>
+                            <button class="touch" value="s">S</button>
+                            <button class="touch" value="d">D</button>
+                        </div>
+                    </div>
+                    <div class="touch_row">
+                        <button class="touch" value="space" style="width: 200px">Space</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="info">
+                <div class="info_box" id="player_box" style="width: 50px;">
+                    <H1 id="player"></H1>
+                </div>
+
+                <div class="info_box" id="level_box">
+                    <H1 id="level">NORMAL</H1>
+                </div>
+
+                <div class="info_box" id="font_box">
+                   <button class="font" value="add">+</button>
+                    <p>Font</p>
+                   <button class="font" value="minus">-</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="./jQuery-v3.5.1.js"></script>
+<script src="./index.js"></script>

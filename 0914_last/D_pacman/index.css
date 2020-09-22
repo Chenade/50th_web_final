@@ -1,0 +1,126 @@
+.page{
+    width: 768px;
+    height: 1024px;
+    background-color: black;
+    overflow-y: auto;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    margin-left: 15px   ;
+}
+
+#plyr_input{
+    width: 500px;
+    font-size: 50px;
+}
+
+.index{
+    font-size: 40px;
+    color: white;
+    background-color: transparent;
+    border: solid white 2px;
+    margin: 15px;
+}
+
+.selected{
+    color: black;
+    background-color: yellow;
+    border: solid yellow 2px;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info_box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+H1{
+    color: white;
+    font-size: 40px;
+}
+
+.font{
+    color: white;
+    background-color: transparent;
+    font-size: x-large;
+}
+
+p{
+    color: white;
+    font-size: x-large;
+}
+
+#map{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.map_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.map_icon{
+    width: 35px;
+    height: 35px;
+}
+
+
+
+.box{
+    position: absolute;
+    display: none;
+}
+
+#tutorial_box{
+    width: 500px;
+    min-height: 300px;
+    background-color: black;
+    border: solid yellow 2px;
+    padding: 15px;
+}
+#result_box{
+    width: 500px;
+    min-height: 300px;
+    background-color: black;
+    border: solid yellow 2px;
+    padding: 15px;
+}
+
+#content{
+    min-height: 150px;
+}
+
+.highlight{
+    border: solid red 3px;
+}
+
+.touch_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.touch{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    border:  solid white 2px;
+    margin: 2px;
+}
