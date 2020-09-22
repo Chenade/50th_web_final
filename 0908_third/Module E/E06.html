@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E06</title>
+</head>
+<body>
+
+<input type="file" id="file">
+<a id="download" style="display: none;">myfile.txt</a>
+
+</body>
+</html>
+<script src="jQuery-v3.5.1.js"></script>
+<script>
+
+    var file = document.getElementById("file");
+    var data = [],result='';
+    file.addEventListener('change',function () {
+        data = [];
+        result='';
+
+        var fr = new FileReader();
+        fr.onload = function () {
+
+            var tmp = fr.result.split('\n');
+            for(var i in tmp){
+                data.push(tmp[i]);
+            }
+            var remove = Array.from( new Set(data));
+            for(var i in remove){
+                result += remove[i] + '\n';
+            }
+        };
+
+        $('#download').attr('href','data:text/plain;charset=utf-8,' + encodeURIComponent(result));
+        $('#download').attr('download',this.files[0].name);
+        $('#download').html(this.files[0].name);
+        $('#download').css('display','inline');
+        fr.readAsText(this.files[0]);
+    });
+
+
+</script>
