@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="index.css" rel="stylesheet">
+    <title>PacMan</title>
+</head>
+<body>
+
+<div align="center">
+
+    <div id="index_page">
+        <div class="page">
+
+            <div id="title"><img src="source/logo.png" style="width:750px;"></div>
+            <div id="icon">
+                <img class="icon" src="source/Asset%201.png">
+                <img class="icon" src="source/Asset%203.png">
+                <img class="icon" src="source/Asset%205.png">
+                <img class="icon" src="source/blank.png">
+                <img class="icon" src="source/Asset%208.png">
+                <img class="icon" src="source/dot.png">
+            </div>
+            <div><input type="text" id="player_name" class="input" placeholder="Player's Name"/></div>
+            <div>
+                <button class="index" value="easy">EASY</button>
+                <button class="index select" value="normal">NORMAL</button>
+                <button class="index" value="hard">HARD</button>
+            </div>
+            <div>
+                <button class="index" value="tutorial">TUTORIAL</button>
+                <button class="index" value="start">START GAME</button>
+            </div>
+            <div>
+                <button class="font" value="add">+</button>
+                <a style="color:white;font-size: 30px">Font</a>
+                <button class="font" value="minus">-</button>
+            </div>
+        </div>
+    </div>
+<br>
+    <div id="play_page" style="display: none;">
+        <div class="page2" style="overflow: auto; padding: 10px;">
+            <div>
+                <button class="index" id="tut_close" value="index">結束TUTORIAL</button>
+            </div>
+            <div><img src="source/logo.png" style="width:750px;"></div>
+
+            <div class="info">
+                <div class="info_detail" id="score">
+                    <H1>SCORE：</H1>
+                    <H1 id="info_score">00</H1>
+                </div>
+                <div class="info_detail" id="life">
+                    <H1>Live：</H1>
+                    <div id="info_life"></div>
+                </div>
+                <div class="info_detail" id="time">
+                    <H1>Time：</H1>
+                    <H1 id="info_time">00:00</H1>
+                </div>
+                <div class="info_detail">
+                    <img src="./source/play.png" class="icon" id="play_pause"/>
+                </div>
+            </div>
+            <div align="center" id="map"></div>
+
+            <div id="screen_control">
+                <div class="screen_1">
+                    <button class="screen_index" value="w">W</button>
+                </div>
+                <div class="screen_1">
+                    <button class="screen_index" value="a">A</button>
+                    <button class="screen_index" value="s">S</button>
+                    <button class="screen_index" value="d">D</button>
+                </div>
+
+            </div>
+
+            <div class="info">
+                <H1 id="info_player"></H1>
+                <H1 id="info_level"></H1>
+                <div class="info_detail" id="font_control">
+                    <button class="font" value="add">+</button>
+                    <a style="color:white;font-size: 30px">Font</a>
+                    <button class="font" value="minus">-</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div  align="center" id="result">
+            <h1>RESULT</h1>
+            <hr>
+            <button class="index" value="start">RESTART</button>
+        </div>
+
+        <div  align="center" id="tut_word">
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+</body>
+</html>
+
+<script src="jQuery-v3.5.1.js"></script>
+<script src="index.js"></script>

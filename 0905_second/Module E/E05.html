@@ -1,0 +1,85 @@
+<!doctype HTML5>
+<html>
+
+<head>
+    <style>
+        .color{
+            width:60px;
+            height: 60px;
+            border-radius: 10px;
+            margin:10px;
+        }
+
+        #main{
+            border: solid black 1px;
+            background-image: linear-gradient(to right, red, yellow);
+        }
+    </style>
+</head>
+
+<body>
+
+<div style="display: flex; flex-direction: row; flex-wrap: nowrap; width: 100vw; justify-content:space-around;">
+    <div style="display: flex; flex-direction: column; flex-wrap: nowrap;">
+        <button class="left color" value="red" style="background-color: red"></button>
+        <button class="left color" value="greenyellow" style="background-color: greenyellow"></button>
+        <button class="left color" value="blue" style="background-color: blue"></button>
+        <button class="left color" value="saddlebrown" style="background-color: saddlebrown"></button>
+        <button class="left color" value="darkolivegreen" style="background-color: darkolivegreen"></button>
+    </div>
+
+    <div style="display: flex; align-items: center">
+        <input type="text" id="left_input" style="width:100px;">
+    </div>
+
+    <div style="display: flex; align-items: center">
+        <div id="main" style="width: 300px; height: 300px;border-radius: 50px;"></div>
+    </div>
+
+    <div style="display: flex; align-items: center">
+        <input type="text" id="right_input" style="width:100px;">
+    </div>
+
+    <div style="display: flex; flex-direction: column; flex-wrap: nowrap;">
+        <button class="right color" value="yellow" style="background-color: yellow"></button>
+        <button class="right color" value="deepskyblue" style="background-color: deepskyblue"></button>
+        <button class="right color" value="hotpink" style="background-color: hotpink"></button>
+        <button class="right color" value="orange" style="background-color: orange"></button>
+        <button class="right color" value="brown" style="background-color: brown"></button>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+<script src="./jQuery-v3.5.1.js"></script>
+<script>
+
+    var left = 'red', right = 'yellow';
+
+    $('.left').on('click',function(){
+        left = $(this).val();
+        $("#main").css('background-image','linear-gradient(to right,' + left + ',' + right + ')');
+    });
+
+    $('.right').on('click',function(){
+        right = $(this).val();
+        $("#main").css('background-image','linear-gradient(to right,' + left + ',' + right + ')');
+    });
+
+    $("#left_input").on('keyup',function(){
+        if( $(this).val().length > 6 ){
+            left = $(this).val();
+            $("#main").css('background-image','linear-gradient(to right,' + left + ',' + right + ')');
+        }
+    });
+
+    $("#right_input").on('keyup',function(){
+        if( $(this).val().length > 6 ){
+            right = $(this).val();
+            $("#main").css('background-image','linear-gradient(to right,' + left + ',' + right + ')');
+        }
+    });
+
+</script>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E03</title>
+
+    <style>
+        .hor_low{
+            width: 50px;
+            height: 5px;
+            background-color: lightgray;
+            margin: 2px;
+        }
+        .ver_low{
+            width: 5px;
+            height: 50px;
+            margin: 2px;
+            background-color: lightgray;
+        }
+        .hor{
+            width: 50px;
+            height: 5px;
+
+            margin: 2px;
+            background-color: red;
+        }
+        .ver{
+            width: 5px;
+            height: 50px;
+            margin: 2px;
+            background-color: red;
+        }
+        .contain{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .contain2{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main" style="display: flex; flex-direction: row;" >
+
+</div>
+
+
+</body>
+</html>
+
+<script src="jQuery-v3.5.1.js"></script>
+<script>
+
+    var time = new Date(),
+        HH = time.getHours(),
+        mm = time.getMinutes(),
+        ss = time.getSeconds();
+
+    HH = (HH < 10) ? "0" + HH : HH.toString() ;
+    mm = (mm < 10) ? "0" + mm : mm.toString() ;
+    ss = (ss < 10) ? "0" + ss : ss.toString() ;
+
+    draw(HH);
+    $("#main").append('<div style="color: red; font-size: 100px;">:</div>');
+    draw(mm);
+    $("#main").append('<div id="flash" style="color: red; font-size: 100px;">:</div>');
+    draw(ss);
+
+    setInterval(function () {
+        if($("#flash").css('visibility') == 'visible'){
+            $("#flash").css('visibility','hidden');
+        }else{ $("#flash").css('visibility','visible');}
+    },500);
+
+    setInterval(function () {
+        $("#main").empty();
+
+        var time = new Date(),
+            HH = time.getHours(),
+            mm = time.getMinutes(),
+            ss = time.getSeconds();
+
+        HH = (HH < 10) ? "0" + HH : HH.toString() ;
+        mm = (mm < 10) ? "0" + mm : mm.toString() ;
+        ss = (ss < 10) ? "0" + ss : ss.toString() ;
+
+        draw(HH);
+        $("#main").append('<div style="color: red; font-size: 100px;">:</div>');
+        draw(mm);
+        $("#main").append('<div id="flash" style="color: red; font-size: 100px;">:</div>');
+        draw(ss);
+    },1000);
+
+    function draw(H){
+
+        var tmp = (H.substring(0,1));
+        var div = (numbers(tmp));
+        $("#main").append(div);
+
+        var tmp = (H.substring(1,2));
+        var div = (numbers(tmp));
+        $("#main").append(div);
+
+
+    }
+
+    function numbers(tmp){
+
+        var div = '';
+
+        switch (tmp) {
+            case "8":
+                div = ' <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>';break;
+            case "9":
+                div = ' <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>';break;
+            case "0":
+                div = ' <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor_low"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>';break;
+            case "1":
+                div = ' <div class="hor_low"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor_low"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor_low"></div>';break;
+            case "2":
+                div = ' <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver_low"></div> </div>\n' +
+                    '        <div class="hor"></div>';break;
+            case "3":
+                div = ' <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>';break;
+
+            case "4":
+                div = ' <div class="hor_low"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor_low"></div>';break;
+            case "5":
+                div = ' <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver_low"></div> </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>';break;
+            case "6":
+                div = ' <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver_low"></div> </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor"></div>';break;
+            case "7":
+                div = ' <div class="hor"></div>\n' +
+                    '        <div class="contain2"> <div class="ver"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor_low"></div>\n' +
+                    '        <div class="contain2"> <div class="ver_low"></div> <div class="ver"></div> </div>\n' +
+                    '        <div class="hor_low"></div>';
+                break;
+
+        }
+
+
+        div = "<div class=\"contain\">" + div + "</div>";
+        return div;
+    }
+
+
+</script>

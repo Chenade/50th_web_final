@@ -1,0 +1,131 @@
+.page{
+    width: 768px;
+    height: 1024px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.page2{
+    width: 768px;
+    height: 1024px;
+    background-color: black;
+}
+#icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.icon{
+    width:40px;
+    height: 40px;
+    margin: 15px;
+}
+.input{
+    background-color: transparent;
+    border:  solid white 2px;
+    font-size: xx-large;
+    color:white;
+}
+.index{
+    background-color: transparent;
+    border:  solid white 2px;
+    font-size: xx-large;
+    color:white;
+    margin:15px;
+}
+.select{
+    background-color: yellow;
+    border:  solid yellow 2px;
+    font-size: xx-large;
+    color:black;
+}
+.font{
+    background-color: transparent;
+    border:  solid white 1px;
+    color:white;
+    width: 30px;
+    height: 30px;
+}
+
+H1,p,H2{
+    color:white;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+.info_detail{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 30px;
+}
+#info_life{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.map_row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.map_col{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.map_icon{
+    width:35px;
+    height: 35px;
+}
+
+#result{
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: solid yellow 2px;
+    display: none;
+    position: absolute;
+}
+
+#tut_word{
+    min-width: 200px;
+    min-height: 100px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: solid yellow 2px;
+    position: absolute;
+}
+
+.tut_box{
+    border: solid red 3px;
+}
+#info_player{
+    min-width: 100px;
+    min-height: 50px;
+}
+
+.screen_1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.screen_index{
+    background-color: transparent;
+    border:  solid white 2px;
+    font-size: xx-large;
+    color:white;
+    margin:15px;
+}
