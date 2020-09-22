@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E06</title>
+</head>
+<body>
+
+    Select a file:<input type="file" id="file">
+    <a id="download"></a>
+
+</body>
+</html>
+
+<script src="jQuery-v3.5.1.js"></script>
+<script>
+
+    $("#file").on('change',function () {
+
+        var result = '';
+        var fr = new FileReader();
+        fr.onload = function () {
+
+            var row = fr.result.split('\n');
+            var tmp = Array.from( new Set(row));
+
+            for(var i in tmp){
+                result += tmp[i] + '\n';
+            }
+
+
+        }
+
+        $("#download").attr('href','data:text/plain;charset=utf-8,' + encodeURIComponent(result));
+        $("#download").attr('download',this.files[0].name);
+        $("#download").html(this.files[0].name);
+
+        fr.readAsText(this.files[0]);
+    });
+
+</script>

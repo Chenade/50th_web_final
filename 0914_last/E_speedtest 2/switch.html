@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>swiitch</title>
+
+
+    <style>
+        .checkbox{
+            display: none;
+        }
+        .label{
+            display: block;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        .inner{
+            display: block;
+            width: 200%;
+            margin-left: -100%;
+        }
+        .inner:before{
+            display: block;
+            float: left;
+            height: 30px;
+            width: 50%;
+            content: "";
+            background-color: green;
+        }
+        .inner:after{
+            display: block;
+            float: left;
+            height: 30px;
+            width: 50%;
+            content: "";
+            background-color: lightgray;
+        }
+        .switch{
+            display: block;
+            position: absolute;
+            right: 40px;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            background-color: whitesmoke;
+            border: solid gray 1px;
+            margin: 5px;
+        }
+        .checkbox:checked + .label .inner{
+            margin-left: 0;
+        }
+        .checkbox:checked + .label .switch{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: relative; width: 80px;">
+
+        <input type="checkbox" class="checkbox" id="switch_id" name="switch_name">
+        <label class="label" for="switch_id">
+            <span class="inner"></span>
+            <span class="switch"></span>
+        </label>
+
+    </div>
+</body>
+</html>

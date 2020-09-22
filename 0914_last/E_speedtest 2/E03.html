@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E03</title>
+    <style>
+        .hor{
+            width: 150px;
+            height: 5px;
+            background-color: red;
+        }
+        .vert{
+            height: 150px;
+            width: 5px;
+            background-color: red;
+        }
+        .low {
+            background-color: lightgray;
+        }
+        .vert_box{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="display: flex; flex-direction: row; justify-content: space-around">
+    <div>
+
+    </div>
+
+    </div>
+</body>
+</html>
+
+<script src="jQuery-v3.5.1.js"></script>
+<script>
+
+    var time = new Date(),
+        hh = time.getHours(),
+        mm = time.getMinutes(),
+        ss = time.getSeconds();
+
+    pad(hh);
+    $("#container").append('<div><p style="font-size: 100px; color: red">:</p></div>');
+    pad(mm);
+    $("#container").append('<div id="flash" style="visibility: visible"><p style="font-size: 100px; color: red">:</p></div>');
+    pad(ss);
+
+    setInterval(function () {
+        if($("#flash").css('visibility') == 'visible')
+            $("#flash").css('visibility','hidden');
+        else
+            $("#flash").css('visibility','visible');
+    },500);
+
+    setInterval(function () {
+        $("#container").empty();
+        var time = new Date(),
+            hh = time.getHours(),
+            mm = time.getMinutes(),
+            ss = time.getSeconds();
+        pad(hh);
+        $("#container").append('<div><p style="font-size: 100px; color: red">:</p></div>');
+        pad(mm);
+        $("#container").append('<div id="flash" style="visibility: visible"><p style="font-size: 100px; color: red">:</p></div>');
+        pad(ss);
+    },500);
+
+    function pad(text) {
+        text = (text<10) ?( "0"+text ): text.toString();
+        if(text == 0) text ="00";
+        add(text.substring(0,1));
+        add(text.substring(1,2));
+    }
+
+    function add(digital) {
+        var div = '<div>';
+        switch (digital) {
+            case "8":
+                div += '' +
+                    '       <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>' +
+                    '</div>';
+                break;
+                 case "9":
+                div += '' +
+                    '       <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>' +
+                    '</div>';
+                break;
+                 case "0":
+                div += '' +
+                    '       <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor low"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>' +
+                    '</div>';
+                break;
+                 case "1":
+                div += '' +
+                    '       <div class="hor low"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor low"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor low"></div>' +
+                    '</div>';
+                break;
+                 case "2":
+                div += '' +
+                    '       <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert low"></div>   </div>\n' +
+                    '        <div class="hor"></div>' +
+                    '</div>';
+                break;
+                 case "3":
+                div += '' +
+                    '       <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>' +
+                    '</div>';
+                break;
+                 case "4":
+                div += '' +
+                    '       <div class="hor low"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor low"></div>' +
+                    '</div>';
+                break;
+                 case "5":
+                div += '' +
+                    '       <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert low"></div>   </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>' +
+                    '</div>';
+                break;
+                 case "6":
+                div += '' +
+                    '       <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert low"></div>   </div>\n' +
+                    '        <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor"></div>' +
+                    '</div>';
+                break;
+                 case "7":
+                div += '' +
+                    '       <div class="hor"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor low"></div>\n' +
+                    '        <div class="vert_box">   <div class="vert low"></div><div class="vert"></div>   </div>\n' +
+                    '        <div class="hor low"></div>' +
+                    '</div>';
+                break;
+        }
+
+        $("#container").append(div);
+    }
+
+</script>

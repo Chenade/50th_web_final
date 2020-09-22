@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E10</title>
+</head>
+<body>
+    <div style="width: 300px; height: 150px; border: solid black 1px;">
+        <canvas id="canvas" width="300" height="150"></canvas>
+    </div>
+</body>
+</html>
+
+<script src="jQuery-v3.5.1.js"></script>
+<script>
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var isDrawing = false;
+    var last_x = 0;
+    var last_y = 0;
+
+    $("#canvas").on('mouseup',function () {
+        isDrawing =false;
+    });
+
+    $("#canvas").on('mouseout',function () {
+        isDrawing =false;
+    });
+
+    $("#canvas").on('mousedown',function (e) {
+        isDrawing =true;
+        last_x = e.offsetX;
+        last_y = e.offsetY;
+    });
+
+    $("#canvas").on('mousemove',draw);
+
+    function draw(e) {
+        if(isDrawing){
+            console.log('draw');
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(last_x,last_y);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            last_x = e.offsetX;
+            last_y = e.offsetY;
+        }
+    }
+
+
+</script>

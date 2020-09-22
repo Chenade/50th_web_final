@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E09</title>
+    <style>
+
+        .switch_demo-checkbox {
+            display: none;
+        }
+        .switch_demo-label {
+            display: block;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        .switch_demo-inner {
+            display: block;
+            width: 200%;
+            margin-left: -100%;
+        }
+        .switch_demo-inner:before {
+            display: block;
+            float: left;
+            width: 50%;
+            height: 30px;
+            content: "";
+            background-color: green;
+        }
+        .switch_demo-inner:after {
+            display: block;
+            float: left;
+            width: 50%;
+            height: 30px;
+            content: "";
+            background-color: lightgray;
+        }
+        .switch_demo-switch {
+            display: block;
+            position: absolute;
+            right: 40px;
+            width: 18px;
+            height: 18px;
+            border-radius: 20px;
+            margin: 5px;
+            background: #FFFFFF;
+        }
+        .switch_demo-checkbox:checked + .switch_demo-label .switch_demo-inner {
+            margin-left: 0;
+        }
+        .switch_demo-checkbox:checked + .switch_demo-label .switch_demo-switch {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="position: relative; width: 80px;">
+        <input type="checkbox" name="switch_demo" class="switch_demo-checkbox" id="myswitch_demo" checked>
+        <label class="switch_demo-label" for="myswitch_demo">
+            <span class="switch_demo-inner">
+
+            </span>
+            <span class="switch_demo-switch"></span>
+        </label>
+    </div>
+</body>
+</html>

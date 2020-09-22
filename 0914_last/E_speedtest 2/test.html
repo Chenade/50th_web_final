@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>88</title>
+</head>
+<body>
+
+<ul class="navbar-nav w-100">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            {{trans('dictionary.Administrator')}}
+        </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+            <li class="dropdown-item"><a href="#">Some action</a></li>
+            <li class="dropdown-item"><a href="#">Some other action</a></li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-submenu">
+                <a  class="dropdown-item" href="#">Hover me for more options</a>
+                <ul class="dropdown-menu">
+
+                    <li class="dropdown-item"><a href="#">Second level</a></li>
+                    <li class="dropdown-item"><a href="#">Second level</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    <li class="nav-item dropdown">
+        <a id="dropdownMenu1" href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">
+            <i class="fas fa-user">
+                @if(session('user'))
+                {{session('user')['id']}}
+                @else
+                Anonymous
+                @endif
+            </i>
+        </a>
+        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+            @if(session('user'))
+            <li>
+                <a href="#user-card-modal" class="dropdown-item" onclick="return false;"><i class="fas fa-id-card"> {{trans('dictionary.User_Profile')}}</i></a>
+            </li>
+            <li class="dropdown-divider"></li>
+            @endif
+            <li class="dropdown-submenu">
+                <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" class="dropdown-item dropdown-toggle"><i class="fas fa-language"> {{trans('dictionary.Language')}}</i></a>
+                <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
+                    <li><a href="/language/en" class="dropdown-item">English</a></li>
+                    <li><a href="/language/zh" class="dropdown-item">繁體中文</a></li>
+                    <li><a href="/language/jp" class="dropdown-item">日文</a></li>
+                </ul>
+            </li>
+            @if(session('user'))
+            <li class="dropdown-divider"></li>
+            <li>
+                <a href="/logout" class="dropdown-item"><i class="fas fa-sign-out-alt"> {{trans('dictionary.Logout')}}</i></a>
+            </li>
+            @endif
+        </ul>
+    </li>
+
+        <div class="dropdown-menu">
+            @if(session('user')['permission']['server'] || session('user')['permission']['streaming'])
+            <a class="dropdown-item" href="/dashboard"><i class="fas fa-tachometer-alt"></i> {{trans('dictionary.Dashboard')}}
+            </a>
+            @endif
+            @if(session('user')['permission']['account'])
+            <a class="dropdown-item" href="/user"><i class="fas fa-users"></i> {{trans('dictionary.Account_Group_Management')}}
+            </a>
+            @endif
+            @if(session('user')['permission']['groupTask'])
+            <a class="dropdown-item" href="/sharing"><i class="fas fa-share-alt"></i> {{trans('dictionary.Channel_Sharing')}}
+            </a>
+            @endif
+            @if(session('user')['permission']['remote'])
+            <a class="dropdown-item" href="/ptz"><i class="fas fa-binoculars"></i> {{trans('dictionary.Pan_Tilt_Zoom')}}
+            </a>
+            @endif
+            @if(session('user')['permission']['analyze'])
+            <a class="dropdown-item" href="/va"><i class="fas fa-diagnoses"></i> {{trans('va.va')}}</a>
+            @endif
+            @if(session('user')['permission']['fr']  || session('user')['permission']['lpr'])
+            <a id="dropdownMenu" href="#" role="button" data-toggle="dropdown" class="dropdown-item dropdown-toggle"><i class="fas fa-microchip"></i> {{trans('dictionary.ai_recognize')}}<span class="caret"></span></a>
+            <ul aria-labelledby="dropdownMenu" class="dropdown-menu dropdown-menu-right">
+                @if(session('user')['permission']['fr'])
+                <li><a class="dropdown-item" href="/fr"><i class="fas fa-user-circle"></i> {{trans('fr.fr')}}</a></li>
+                @endif
+                @if(session('user')['permission']['lpr'])
+                <li><a class="dropdown-item" href="/lpr"><i class="fas fa-car"></i> {{trans('lpr.lpr')}}</a></li>
+                @endif
+            </ul>
+            @endif
+            @if(session('user')['permission']['device'])
+            <a class="dropdown-item" href="/device"><i class="fas fa-video"></i> {{trans('bovicam.devmgr')}}
+            </a>
+            @endif
+            <a class="dropdown-item" href="/logs"><i class="fas fa-book"></i> {{trans('logs.log')}}</a>
+        </div>
+    </li>
+</ul>
+
+<div class="container">
+    <div class="row">
+        <h2>Multi level dropdown menu in Bootstrap</h2>
+        <hr>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-item"><a href="#">Some action</a></li>
+                <li class="dropdown-item"><a href="#">Some other action</a></li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-submenu">
+                    <a  class="dropdown-item" href="#">Hover me for more options</a>
+                    <ul class="dropdown-menu">
+
+                        <li class="dropdown-item"><a href="#">Second level</a></li>
+                        <li class="dropdown-item"><a href="#">Second level</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
