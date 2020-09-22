@@ -1,3 +1,4 @@
 [ModuleB] : 01:30:00  (web02-03)
+[ModuleC] : 06:00:00
 [ModuleD] : 03:19:00  (without tutorial)
 [ModuleE] : 01:16:00  (without E08) (E03 take 20mins)
