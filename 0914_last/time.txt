@@ -1,1 +1,2 @@
-4:46 PM 9/14/2020 [speedtest] - 00:56:50 (E06 error [5min Debug] )
+04:46 PM 9/14/2020 - [speedtest] - 00:56:50 (E06 error [5min Debug] )
+10:35 AM 9/10/2020 - [speedtest2]  01:08:49
