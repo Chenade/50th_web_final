@@ -1,0 +1,171 @@
+.page{
+    width: 768px;
+    height: 1024px;
+    margin: 0;
+    background-color: black;
+}
+
+#index_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: visible;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+#plyr_input{
+    font-size: 45px;
+}
+
+.index{
+    font-size: xx-large;
+    background-color: transparent;
+    color: white;
+    border: solid white 2px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.index:hover{
+    background-color: white;
+    color: black;
+}
+
+.index:active{
+    background-color: yellow;
+    color: black;
+}
+
+#quit{
+    font-size: xx-large;
+    background-color: transparent;
+    color: white;
+    border: solid white 2px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.selected{
+    color: black;
+    background-color: yellow;
+    border-color: yellow;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+H1{
+    color: white;
+    margin-right: 10px;
+    font-size: 40px;
+}
+
+p{
+    color: white;
+    font-size: x-large;
+}
+
+.font{
+    background-color: transparent;
+    color: white;
+    font-size: medium;
+}
+
+#map{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.map_row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.map_icon{
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+}
+
+.touch{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background-color: transparent;
+    border: solid white 1px;
+    font-size: medium;
+    color: white;
+}
+
+
+.touch:hover{
+    background-color: white;
+    color: black;
+}
+
+.touch:active{
+    background-color: yellow;
+    color: black;
+}
+
+.highlight{
+    border: solid red 1px;
+}
+
+#description_box{
+    width: 768px;
+    height: 1024px;
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tutorial_box{
+    display: none;
+    z-index: 1000;
+}
+
+#description{
+    background-color: black;
+    color: white;
+    border: solid white 2px;
+    width: 500px;
+    min-height: 350px;
+}
+
+#end_box{
+    width: 768px;
+    height: 1024px;
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#end_box_container{
+    display: none;
+    z-index: 1000;
+}
+
+#end{
+    background-color: black;
+    color: white;
+    border: solid white 2px;
+    width: 500px;
+    min-height: 350px;
+}

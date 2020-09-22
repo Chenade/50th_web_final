@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <title>PacMan</title>
+</head>
+<body>
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+    <div id="index_container">
+        <div id="index_page" class="page">
+
+            <div>
+                <img src="./source/title.png" style="width: 750px;">
+            </div>
+
+            <div align="center">
+                <img src="./source/Asset%201.png" class="icon">
+                <img src="./source/Asset%203.png" class="icon">
+                <img src="./source/Asset%205.png" class="icon">
+                <img src="./source/blank.png" class="icon">
+                <img src="./source/Asset%207.png" class="icon">
+                <img src="./source/dot.png" class="icon">
+            </div>
+
+            <div align="center">
+                <input type="text" id="plyr_input" placeholder="Player's Name">
+            </div>
+
+            <div align="center">
+                <button class="index" value="easy">EASY</button>
+                <button class="index selected" value="normal">NORMAL</button>
+                <button class="index" value="hard">HARD</button>
+                <br>
+                <button class="index" value="tutorial">TUTORIAL</button>
+                <button class="index" value="start">START GAME</button>
+            </div>
+
+            <div class="info" style="justify-content: flex-end">
+                <button class="font" value="add">+</button>
+                <p>Font</p>
+                <button class="font" value="minus">-</button>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <div id="play_container" style="overflow-y: auto; background-color: black; display: none;">
+        <div id="tutorial_box">
+            <div id="description_box">
+                <div align="center" id="description" style="padding: 50px;"></div>
+            </div>
+        </div>
+
+        <div id="end_box_container">
+            <div id="end_box">
+                <div align="center" id="end" style="padding: 50px;"></div>
+            </div>
+        </div>
+
+        <div id="play_page" class="page">
+
+            <div align="center">
+                <img src="./source/title.png" style="height: 100px;">
+            </div>
+
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between" >
+                <div class="info" id="score_box">
+                   <H1>SCORE : </H1>
+                   <H1 id="score">00</H1>
+                </div>
+                <div class="info" id="live_box">
+                   <H1>LIVE : </H1>
+                   <div id="live"></div>
+                </div>
+                <div class="info" id="time_box">
+                    <H1>TIME : </H1>
+                    <H1 id="time">01:00</H1>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <img src="./source/play.png" id="play_pause" class="map_icon">
+                </div>
+            </div>
+
+            <div id="map"></div>
+
+            <div id="touch_panel">
+                <div align="center">
+                    <button class="touch" value="w">W</button>
+                </div>
+
+                <div align="center">
+                    <button class="touch" value="a">A</button>
+                    <button class="touch" value="s">S</button>
+                    <button class="touch" value="d">D</button>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between" >
+                <div class="info" id="player_box">
+                    <H1 id="player"></H1>
+                </div>
+                <div class="info" id="level_box">
+                    <H1 id="level"></H1>
+                </div>
+                <div class="info" id="font_box">
+                   <button class="font" value="add">+</button>
+                    <p>Font</p>
+                   <button class="font" value="minus">-</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
+
+<script src="jQuery-v3.5.1.js"></script>
+<script src="index.js"></script>
